@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Professional video creator for Brahmacharya quotes and motivational content">
+    <meta name="theme-color" content="#667eea">
+    <title>Brahmacharya Video Creator - 5 Min Video Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Brahmacharya Video Creator</h1>
+            <p>5 Minute Video Banaye - Professional & Viral Ready</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="section">
+                    <h3>📝 Script Input</h3>
+                    <textarea id="scriptInput" placeholder="Apni kahani/script yahan paste karein...&#10;&#10;Example:&#10;Brahmacharya se milti hai shakti&#10;Jeevan mein aata hai anushasan&#10;Mann hota hai shant aur focused&#10;Focus badhta hai har din" aria-label="Video script input"></textarea>
+                    <div class="word-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">📊 Total Words:</span>
+                            <span id="wordCount" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">⏱️ Estimated Duration:</span>
+                            <span id="estimatedDuration" class="stat-value">0:00</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">📄 Scenes:</span>
+                            <span id="sceneCount" class="stat-value">1</span>
+                        </div>
+                    </div>
+                    <div class="recommendation">
+                        <strong>💡 Recommendation:</strong>
+                        <p id="recommendation">14 second video - Koi bhi length ki script daal sakte hain, scrolling automatically adjust hogi</p>
+                    </div>
+                    <div class="input-group">
+                        <label for="wordsPerMinute">Video Duration (Fixed):</label>
+                        <input type="text" id="wordsPerMinute" value="14 seconds" readonly style="background: #f0f0f0; cursor: not-allowed;" aria-label="Video duration fixed at 14 seconds">
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>🖼️ Background Image (Optional)</h3>
+                    <p style="color: #666; font-size: clamp(12px, 2vw, 13px); margin-bottom: 10px;">
+                        Apni image upload karein ya gradient use karein
+                    </p>
+                    <input type="file" id="bgImageFile" accept="image/*" aria-label="Upload background image">
+                    <button id="removeBgImage" class="btn-secondary" style="margin-top: 10px;">Remove Image</button>
+                </div>
+
+                <div class="section">
+                    <h3>🎨 Background Theme (If No Image)</h3>
+                    <select id="bgStyle" aria-label="Background theme selection">
+                        <option value="gradient1">Deep Blue Professional</option>
+                        <option value="gradient2">Navy Blue Elegant</option>
+                        <option value="gradient3">Dark Teal Clean</option>
+                        <option value="gradient4">Midnight Blue</option>
+                    </select>
+                </div>
+
+                <div class="section">
+                    <h3>✨ Scroll Animation</h3>
+                    <p style="color: #666; font-size: clamp(12px, 2vw, 14px); margin-top: 10px;">
+                        ✅ Pura script niche se upar scroll hoga<br>
+                        ✅ Duration ke according perfect timing<br>
+                        ✅ Smooth fade in/out effect
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h3>🎵 Background Music</h3>
+                    <input type="file" id="audioFile" accept="audio/*" aria-label="Upload background music">
+                    <button id="removeAudio" class="btn-secondary">Remove Audio</button>
+                </div>
+
+                <div class="button-group">
+                    <button id="generateBtn" class="btn-primary" aria-label="Generate video">🎬 Generate Video</button>
+                    <button id="playBtn" class="btn-secondary" disabled aria-label="Play video">▶️ Play</button>
+                    <button id="pauseBtn" class="btn-secondary" disabled aria-label="Pause video">⏸️ Pause</button>
+                    <button id="resetBtn" class="btn-secondary" aria-label="Reset video">🔄 Reset</button>
+                    <button id="downloadBtn" class="btn-primary" disabled aria-label="Download video">💾 Download Video</button>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="progressText">Ready to create video</p>
+                </div>
+            </div>
+
+            <!-- Video Preview -->
+            <div class="preview-panel">
+                <h3>📱 Video Preview (9:16 - Portrait/Vertical)</h3>
+                <div class="video-container">
+                    <canvas id="videoCanvas" width="1080" height="1920" aria-label="Video preview canvas"></canvas>
+                    <div id="timeDisplay" aria-live="polite">00:00 / 00:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
